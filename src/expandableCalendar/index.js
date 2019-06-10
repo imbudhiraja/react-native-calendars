@@ -174,6 +174,8 @@ class ExpandableCalendar extends Component {
   getMarkedDates() {
     const {context, markedDates} = this.props;
 
+    return markedDates; // This is hack for one of my project needs.
+    
     if (markedDates) {
       const marked = _.cloneDeep(markedDates);
       if (marked[context.date]) {
