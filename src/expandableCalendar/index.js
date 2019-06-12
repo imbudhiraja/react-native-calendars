@@ -326,6 +326,10 @@ class ExpandableCalendar extends Component {
         const next = this.isLaterDate(_.first(value), date);
         this.scrollPage(next);
       }
+      
+      if (value && value.length>0 && this.props.onMonthChange) {
+       this.props.onMonthChange(value[0]);
+     }
 
       // updating openHeight
       setTimeout(() => { // to wait for setDate() call in horizontal scroll (this.scrollPage())
