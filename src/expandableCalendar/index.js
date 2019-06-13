@@ -453,7 +453,10 @@ class ExpandableCalendar extends Component {
           <CalendarList
             testID="calendar"
             {...this.props}
-            ref={r => this.calendar = r}
+            ref={r => {
+              this.calendar = r;
+              this.props.getRef(r);
+            }}
             current={this.initialDate}
             onDayPress={this.onDayPress}
             onVisibleMonthsChange={this.onVisibleMonthsChange}
